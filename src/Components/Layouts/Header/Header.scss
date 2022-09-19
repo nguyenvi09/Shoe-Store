@@ -1,0 +1,28 @@
+@import './../../../scss/';
+
+header {
+  background-color: #1f2022;
+  padding: 10px 0;
+
+  .container {
+    @include flex(center, space-between);
+
+    .header__right {
+      @include flex(center, space-between);
+      gap: 20px;
+
+      .header__icon {
+        font-size: 3rem;
+        color: white;
+      }
+
+      a {
+        font-size: 2rem;
+        color: white;
+        &:hover {
+          color: #e1b067;
+        }
+      }
+    }
+  }
+}
