@@ -1,0 +1,71 @@
+@import '../../scss/index.scss';
+
+.detail {
+  .detail__container {
+    @include flex(center, center);
+    gap: 100px;
+    .detail__img {
+      flex: 1;
+      img {
+        width: 100%;
+      }
+    }
+    .detail__info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      .detail__title {
+        font-size: 3rem;
+      }
+      .detail__desc {
+        font-size: 2rem;
+      }
+      p:nth-child(3) {
+        font-size: 3rem;
+        color: rgb(8, 212, 8);
+      }
+      .detail__size {
+        display: flex;
+        gap: 20px;
+        .detail__size--style {
+          background-color: grey;
+          font-weight: bold;
+          padding: 10px;
+        }
+      }
+      .detail__price {
+        font-size: 3rem;
+        color: red;
+        font-weight: bold;
+      }
+      .detail__quantity {
+        @include flex(center, left);
+        gap: 10px;
+        button {
+          padding: 10px;
+          color: white;
+          font-size: 2rem;
+          background-color: rgba(0, 0, 255, 0.549);
+          cursor: pointer;
+        }
+      }
+      .detail__btn--add {
+        font-size: 3rem;
+        color: white;
+        background-image: linear-gradient(to right, #b419b4e0, #0000ffbf);
+        padding: 10px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        width: 200px;
+      }
+    }
+  }
+  .related__products {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 50px;
+  }
+}

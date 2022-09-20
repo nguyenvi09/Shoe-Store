@@ -6,6 +6,7 @@ export const productSlice = createSlice({
     arrProduct: [],
     pending: false,
     error: false,
+    productDetail: {},
   },
   reducers: {
     getProductsPending: (state) => {
@@ -20,9 +21,19 @@ export const productSlice = createSlice({
       state.pending = false;
       state.error = true;
     },
+
+    getProductDetailFulfille: (state, action) => {
+      state.pending = false;
+      state.error = false;
+      state.productDetail = action.payload.content;
+    },
   },
 });
 
-export const { getProductsPending, getProductsFulfilled, getProductsRejected } =
-  productSlice.actions;
+export const {
+  getProductsPending,
+  getProductsFulfilled,
+  getProductsRejected,
+  getProductDetailFulfille,
+} = productSlice.actions;
 export default productSlice.reducer;
