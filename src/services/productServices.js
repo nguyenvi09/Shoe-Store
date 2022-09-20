@@ -1,15 +1,16 @@
+import { DOMAIN } from '../ultil/settings/config';
+import axios from 'axios';
 import {
   getProductsPending,
-  getProductsFulfilled,
   getProductsRejected,
+  getProductsFulfilled,
   getProductDetailFulfille,
-} from './productsSlice';
-import axios from 'axios';
+} from './../redux/productsSlice';
 
 export const getProducts = async (dispatch) => {
   dispatch(getProductsPending());
   try {
-    const res = await axios.get('https://shop.cyberlearn.vn/api/Product');
+    const res = await axios.get(`${DOMAIN}api/Product`);
     dispatch(getProductsFulfilled(res.data));
   } catch (err) {
     dispatch(getProductsRejected());
@@ -19,9 +20,7 @@ export const getProducts = async (dispatch) => {
 export const getProductDetail = async (id, dispatch) => {
   dispatch(getProductsPending());
   try {
-    const res = await axios.get(
-      `https://shop.cyberlearn.vn/api/Product/getbyid?id=${id}`,
-    );
+    const res = await axios.get(`${DOMAIN}api/Product/getbyid?id=${id}`);
     dispatch(getProductDetailFulfille(res.data));
   } catch (err) {
     dispatch(getProductsRejected());

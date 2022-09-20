@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Product from '../../Components/Layouts/Product/Product';
-import { getProductDetail } from '../../redux/apiRequests';
+import { getProductDetail } from '../../services/productServices';
 import './detail.scss';
 
 const Detail = () => {

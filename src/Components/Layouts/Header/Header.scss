@@ -1,7 +1,7 @@
 @import './../../../scss/';
 
 header {
-  background-color: #1f2022;
+  background-color: $color-black;
   padding: 10px 0;
 
   .container {
@@ -20,7 +20,7 @@ header {
         font-size: 2rem;
         color: white;
         &:hover {
-          color: #e1b067;
+          color: $color-brown;
         }
       }
     }
