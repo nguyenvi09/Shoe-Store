@@ -15,7 +15,7 @@ const ProductList = () => {
   }, []);
 
   const renderProduct = () => {
-    return arrProduct?.slice(10).map((product) => {
+    return arrProduct?.slice(0, 6).map((product) => {
       return <Product key={product.id} product={product} />;
     });
   };
